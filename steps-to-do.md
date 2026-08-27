@@ -27,31 +27,30 @@ Add the Tailwind plugin to your Vite config:
 
 ```ts
 // vite.config.ts
-import { defineConfig } from "vite"
-import react from "@vitejs/plugin-react"
-import tailwindcss from "@tailwindcss/vite"
-import path from "path"
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import tailwindcss from "@tailwindcss/vite";
+import path from "path";
 
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
+    plugins: [react(), tailwindcss()],
+    resolve: {
+        alias: {
+            "@": path.resolve(__dirname, "./src"),
+        },
     },
-  },
-})
+});
 ```
 
 Add `@` alias type to `tsconfig.json`:
 
 ```json
 {
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
+    "compilerOptions": {
+        "paths": {
+            "@/*": ["./src/*"]
+        }
     }
-  }
 }
 ```
 
@@ -96,6 +95,7 @@ npx shadcn@latest add button card input label dialog dropdown-menu
 ```
 
 Each command will:
+
 - Install required npm dependencies
 - Copy the component source into `@/components/ui/`
 - Add `cn` helper to `@/lib/utils.ts`
@@ -106,18 +106,18 @@ Example — using the `Button` component in `src/App.tsx`:
 
 ```tsx
 // src/App.tsx
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 
 function App() {
-  return (
-    <div className="flex min-h-screen flex-col items-center justify-center gap-4">
-      <h1 className="text-3xl font-bold">shadcn/ui + Vite + React</h1>
-      <Button variant="default">Click me</Button>
-    </div>
-  )
+    return (
+        <div className="flex min-h-screen flex-col items-center justify-center gap-4">
+            <h1 className="text-3xl font-bold">shadcn/ui + Vite + React</h1>
+            <Button variant="default">Click me</Button>
+        </div>
+    );
 }
 
-export default App
+export default App;
 ```
 
 ## 6. Start the Dev Server
@@ -138,16 +138,16 @@ Edit the CSS variables in `src/index.css` to tweak the theme:
 @import "tailwindcss";
 
 :root {
-  --background: 0 0% 100%;
-  --foreground: 222.2 84% 4.9%;
-  --primary: 222.2 47.4% 11.2%;
-  /* ... */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    /* ... */
 }
 
 .dark {
-  --background: 222.2 84% 4.9%;
-  --foreground: 210 40% 98%;
-  /* ... */
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    /* ... */
 }
 ```
 
@@ -163,13 +163,13 @@ Add a class-based dark mode toggle by setting `darkMode: ["class"]` in your Tail
 
 ## Useful Commands
 
-| Command | Description |
-| --- | --- |
-| `npx shadcn@latest init` | Initialize shadcn/ui in a project |
-| `npx shadcn@latest add <component>` | Add a specific component |
-| `npx shadcn@latest add <a> <b> <c>` | Add multiple components |
-| `npx shadcn@latest diff` | Check for component updates |
-| `npx shadcn@latest registry` | Browse the component registry |
+| Command                             | Description                       |
+| ----------------------------------- | --------------------------------- |
+| `npx shadcn@latest init`            | Initialize shadcn/ui in a project |
+| `npx shadcn@latest add <component>` | Add a specific component          |
+| `npx shadcn@latest add <a> <b> <c>` | Add multiple components           |
+| `npx shadcn@latest diff`            | Check for component updates       |
+| `npx shadcn@latest registry`        | Browse the component registry     |
 
 ## References
 
