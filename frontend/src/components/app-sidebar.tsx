@@ -2,6 +2,7 @@
 
 import * as React from "react"
 
+import { ModeToggle } from "@/components/mode-toggle"
 import { NavMain } from "@/components/nav-main"
 import { NavProjects } from "@/components/nav-projects"
 import { NavUser } from "@/components/nav-user"
@@ -107,7 +108,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <NavProjects projects={data.projects} />
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={data.user} />
+        <div className="flex items-center justify-between gap-2 px-2 group-data-[collapsible=icon]:justify-center group-data-[collapsible=icon]:px-0">
+          <NavUser user={data.user} />
+          <ModeToggle />
+        </div>
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>
